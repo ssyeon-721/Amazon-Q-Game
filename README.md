@@ -1,8 +1,6 @@
-# Build Games with Amazon Q CLI and score a T shirt 🏆
+# 🎮 Build Games with Amazon Q CLI and score a T shirt 🏆
 
 ![image](https://github.com/user-attachments/assets/3884785c-9023-4fc9-81a0-eb5c631472e0)
-
-# 🎮 Amazon Q CLI로 게임 만들기 캠페인
 
 **"Amazon Q CLI로 게임 만들기" 캠페인**은 **Amazon Q CLI**를 통해 **AI 코딩 어시스턴트**를 직접 체험하고,  
 창의력과 기술력을 발휘해 **나만의 게임을 만드는 것**을 목표로 합니다.  
@@ -24,20 +22,17 @@
 - 게임 제작을 위해 **PyGame** 또는 원하는 게임 프레임워크를 설치하세요.
 
 ### 3단계: Amazon Q CLI로 게임 제작
-- 아래 명령어로 채팅 세션을 시작하세요:
 
-  ```bash
-  $ q chat
+---
 
-🌐 언어 지원
+## 🌐 언어 지원
 이 캠페인은 한국어, 일본어, 중국어 등 다양한 언어로 게임을 만들 수 있도록 설계되어 있습니다. 여러분이 가장 편한 언어로 자유롭게 참여해 주세요.
 
-📂 추천 항목
-README.md: 프로젝트 소개 및 게임 규칙 설명
+---
 
-/src: 게임 코드
-
-/assets: 이미지, 사운드 등 리소스
-
-/docs: 개발 및 배포 문서
+## 📂 추천 항목
+- README.md: 프로젝트 소개 및 게임 규칙 설명
+- /src: 게임 코드
+- /assets: 이미지, 사운드 등 리소스
+- /docs: 개발 및 배포 문서
 

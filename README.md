@@ -1,4 +1,4 @@
-# 🎮 Build Games with Amazon Q CLI and score a T shirt 🏆
+# 🎮 Build Games with Amazon Q CLI and score a T shirt
 
 ![image](https://github.com/user-attachments/assets/3884785c-9023-4fc9-81a0-eb5c631472e0)
 
@@ -9,30 +9,40 @@
 
 ---
 
-## ✅ 참여 가이드 (단계별 안내)
+# 🕵️‍♀️ 포렌식 옥션: 인사이드 잡 (Inside Job)
 
-### 1단계: 계정 및 커뮤니티 가입
-- [AWS Builder ID](https://aws.amazon.com/developer/community/community-builders/)에 가입합니다.
-- 고유한 `community.aws` 사용자명을 등록합니다.
-- 다른 빌더들과 도움이나 정보를 주고받고 싶다면 [Discord 커뮤니티](https://discord.gg/amazonbuilders)에도 가입해보세요.
-
-### 2단계: 개발 환경 설정
-- 로컬 PC에 **Amazon Q CLI**를 설치합니다.  
-  설치 가이드: [Linux](https://github.com/awslabs/amazon-q-cli/blob/main/docs/linux.md) | [Windows](https://github.com/awslabs/amazon-q-cli/blob/main/docs/windows.md)
-- 게임 제작을 위해 **PyGame** 또는 원하는 게임 프레임워크를 설치하세요.
-
-### 3단계: Amazon Q CLI로 게임 제작
+**"포렌식 옥션: 인사이드 잡"**은 Amazon Q CLI를 활용한 텍스트 기반 스릴러 게임입니다.  
+당신은 비밀리에 범죄 조직과 내통 중인 과학수사관이 되어, 국제 경매장에서 은밀하게 위작을 조작·회수해야 합니다.  
+30분의 제한 시간, 치밀한 분석과 빠른 판단, 그리고 감시망을 뚫고 탈출할 수 있는가?
 
 ---
 
-## 🌐 언어 지원
-이 캠페인은 한국어, 일본어, 중국어 등 다양한 언어로 게임을 만들 수 있도록 설계되어 있습니다. 여러분이 가장 편한 언어로 자유롭게 참여해 주세요.
+## 🧭 세계관 / 배경
+
+| 항목       | 내용 |
+|------------|------|
+| 사건 명     | **블랙드롭(Black-Drop) 미술품 밀거래 단속 작전** |
+| 시점       | 2025년 6월 15일 19:30 KST |
+| 장소       | 국제 경매장 Ravenhall Gallery 지하 비밀홀 |
+| 공적 설정  | 국내·외 합동 수사팀(코드명 `SVD-47`)이 고가 미술품 경매에 잠입. 실시간 감정을 통해 진품은 압수, 위작은 증거 봉인. |
+| 비밀 설정  | 플레이어(암호명 `ARGO`)는 범죄 조직 `Nebula Fence`와 내통. 위작 5점 회수 및 의뢰 암호 해독이 미션. |
 
 ---
 
-## 📂 추천 항목
-- README.md: 프로젝트 소개 및 게임 규칙 설명
-- /src: 게임 코드
-- /assets: 이미지, 사운드 등 리소스
-- /docs: 개발 및 배포 문서
+## 🎭 주요 인물
 
+| 구분      | 인물명        | 역할 / 특성 |
+|-----------|---------------|--------------|
+| `P`       | **ARGO**       | 플레이어. 경찰 소속 과학수사관이자 XRF 전문가. 돈을 위해 내부 배신자로 전락. |
+| `NPC-1`   | **윤재희 경감** | 현장 수사 리더. 의심도 100 도달 시 체포 씬 발동. |
+| `NPC-2`   | **줄리엔 오커너** | Interpol 감정관. 과학적 오류 발생 시 리포트 생성 (의심도 +20). |
+| `NPC-3`   | **"크리틱"**    | 범죄 조직 현장 연락책. Q CLI 내 `/comm` 채널을 통해 미션·보상 전달. |
+| `의뢰인 카드 8매` | - | 각기 다른 암호 및 요구 조건 존재. 예: `LX-02` → "동양회화 위작 2점 + 파랑계열 1점 제출 시 25만 USDT 송금". |
+
+---
+
+## 🧪 게임 시스템: Apprentice 모드 (Easy)
+
+```system
+★characters: { player:"ARGO", leader:"윤재희", forensic:"줄리엔", handler:"크리틱" }
+★setting: { op:"Black-Drop", place:"Ravenhall Gallery B1", time:"2025-06-15 19:30" }

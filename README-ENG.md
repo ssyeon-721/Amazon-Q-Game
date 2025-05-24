@@ -26,8 +26,8 @@ Can you finish the job, dodge suspicion, and escape within **30 minutes**?
 | Tag                   | Name                     | Role / Trait                                                                                                                             |
 | --------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **P**                 | **ARGO**                 | Player. Police forensic analyst & XRF expert—now working as a double agent for cash.                                                     |
-| **NPC-1**             | **Inspector Grace Park** | Field commander of the raid; arrests you if **Suspicion ≥ 100**.                                                                         |
-| **NPC-2**             | **Dr. Julian Carter**    | Interpol art examiner; submits a report on scientific errors (**+20 Suspicion**).                                                        |
+| **NPC-1**             | **Grace Park**           | Field commander of the raid; arrests you if **Suspicion ≥ 100**.                                                                         |
+| **NPC-2**             | **Julian Carter**        | Interpol art examiner; submits a report on scientific errors (**+20 Suspicion**).                                                        |
 | **NPC-3**             | **“Broker”**             | Syndicate handler; delivers secret orders and rewards via `/comm`.                                                                       |
 | **Client Cards (×8)** | —                        | Each card carries a unique pass-phrase and reward. Example: `LX-02` — *“Deliver 2 Asian counterfeits + 1 blue-tone piece → 250 k USDT.”* |
 

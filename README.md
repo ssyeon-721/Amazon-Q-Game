@@ -1,12 +1,4 @@
 # 🎮 Build Games with Amazon Q CLI and score a T shirt
-
-![image](https://github.com/user-attachments/assets/3884785c-9023-4fc9-81a0-eb5c631472e0)
-
-**"Amazon Q CLI로 게임 만들기" 캠페인**은 **Amazon Q CLI**를 통해 **AI 코딩 어시스턴트**를 직접 체험하고,  
-창의력과 기술력을 발휘해 **나만의 게임을 만드는 것**을 목표로 합니다.  
-이 캠페인은 개발자의 자율성과 상상력을 존중하며,  
-시간과 기술 수준에 맞게 **단계적으로 참여할 수 있도록** 구성되어 있습니다.
-
 ---
 
 # 🕵️‍♀️ 포렌식 옥션: 인사이드 잡 (Inside Job)
@@ -39,10 +31,4 @@
 | `NPC-3`   | **"크리틱"**    | 범죄 조직 현장 연락책. Q CLI 내 `/comm` 채널을 통해 미션·보상 전달. |
 | `의뢰인 카드 8매` | - | 각기 다른 암호 및 요구 조건 존재. 예: `LX-02` → "동양회화 위작 2점 + 파랑계열 1점 제출 시 25만 USDT 송금". |
 
----
 
-## 🧪 게임 시스템: Apprentice 모드 (Easy)
-
-```system
-★characters: { player:"ARGO", leader:"윤재희", forensic:"줄리엔", handler:"크리틱" }
-★setting: { op:"Black-Drop", place:"Ravenhall Gallery B1", time:"2025-06-15 19:30" }

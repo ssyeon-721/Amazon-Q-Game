@@ -1,0 +1,43 @@
+# 🎮 Build Games with Amazon Q CLI and Score a T-Shirt
+---
+
+# 🕵️‍♀️ Forensic Auction: Inside Job
+
+**“Forensic Auction: Inside Job”** is a text-based thriller built for Amazon Q CLI.  
+You slip into the role of a forensic analyst secretly colluding with a crime syndicate and must discreetly tamper with—and extract—counterfeits during an international art auction.  
+Can you finish the job, dodge suspicion, and escape within **30 minutes**?
+
+---
+
+## 🧭 Setting & World
+
+| Item | Details |
+|------|---------|
+| **Operation** | **Black-Drop** – Anti–art-smuggling sting |
+| **Date / Time** | 15 Jun 2025, 19:30 KST |
+| **Location** | Underground auction hall, _Ravenhall Gallery_ |
+| **Public Mission** | Joint task force **SVD-47** infiltrates a 52-lot auction; authentic pieces are seized, counterfeits sealed as evidence. |
+| **Secret Mission** | You, codename **“ARGO,”** are in league with the syndicate **Nebula Fence**. Your job: smuggle out **5 counterfeits** and decode each client’s pass-phrase. |
+
+---
+
+## 🎭 Main Characters
+
+| Tag | Name | Role / Trait |
+|-----|------|--------------|
+| **P** | **ARGO** | Player. Police forensic analyst & XRF expert—now a double agent for cash. |
+| **NPC-1** | **Chief Inspector Yoon Jae-Hee** | Field commander; arrests you if **Suspicion ≥ 100**. |
+| **NPC-2** | **Julien O’Connor** | Interpol art examiner; files a report (+20 Suspicion) on scientific errors. |
+| **NPC-3** | **“Critic”** | Syndicate handler; sends orders/rewards via `/comm`. |
+| **Client Cards (×8)** | — | Each holds a different pass-phrase & reward. Example: `LX-02` — _“Deliver 2 Asian counterfeits + 1 Blue-tone piece → 250 k USDT.”_ |
+
+---
+
+## ⏱️ Timeline (Easy Mode)
+
+| Phase | Time Window | What Happens | System Logic |
+|-------|-------------|--------------|--------------|
+| Prologue | **T-30 : 00 → /start** | Briefing & double mission | `Suspicion = 0` |
+| Rounds 1-5 | **T-30 → 15 min** | Appraise 15 pieces; `/stash` freely | +1 Suspicion per command |
+| **Event A** | **Suspicion ≥ 40** | Yoon’s audit | `/audit` success −15 / fail +25 |
+| Rounds 6-8 | **T-15 → 06 min** | CCTV back online → `/stash` difficulty **+2** | Ne

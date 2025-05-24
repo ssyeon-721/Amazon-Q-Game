@@ -1,4 +1,5 @@
-# 🎮 Build Games with Amazon Q CLI and score a T shirt
+![Uploading image.png…]()
+
 ---
 
 # 🕵️‍♀️ 포렌식 옥션: 인사이드 잡 (Inside Job)

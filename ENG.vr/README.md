@@ -14,7 +14,7 @@ Can you finish the job, dodge suspicion, and escape within **30 minutes**?
 | Item | Details |
 |------|---------|
 | **Operation** | **Black-Drop** – Anti–art-smuggling sting |
-| **Date / Time** | 15 Jun 2025, 19:30 KST |
+| **Date / Time** | 15 Jun 2025, 19:30 UTC |
 | **Location** | Underground auction hall, _Ravenhall Gallery_ |
 | **Public Mission** | Joint task force **SVD-47** infiltrates a 52-lot auction; authentic pieces are seized, counterfeits sealed as evidence. |
 | **Secret Mission** | You, codename **“ARGO,”** are in league with the syndicate **Nebula Fence**. Your job: smuggle out **5 counterfeits** and decode each client’s pass-phrase. |

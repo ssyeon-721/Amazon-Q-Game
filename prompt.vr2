@@ -26,15 +26,15 @@ ui:
     │ ⏱ 남은 시간: 30:00   🧠 의심도: 0/100            │
     ├──────────────────────────────────────────────┤
     │ 📌 명령 목록                                   │
-    │ /draw 3                  - 작품 카드 3장 뽑기  │
-    │ /scan <id> (xrf|brush|sign) - 작품 분석       │
-    │ /stash <id> <숫자>        - 회수 회수 (1~12)    │
-    │ /clients                 - 의뢰인 목록 확인   │
-    │ /manual pigments         - 안료 매뉴얼        │
-    │ /manual cipher           - 의뢰 암호 해독법   │
-    │ /suspicion               - 현재 의심도 확인   │
-    │ /score                   - 현재 점수 확인     │
-    │ /quit                    - 게임 종료          │
+    │ //draw 3                  - 작품 카드 3장 뽑기  │
+    │ //scan <id> (xrf|brush|sign) - 작품 분석       │
+    │ //stash <id> <숫자>        - 회수 회수 (1~12)    │
+    │ //clients                 - 의뢰인 목록 확인   │
+    │ //manual pigments         - 안료 매뉴얼        │
+    │ //manual cipher           - 의뢰 암호 해독법   │
+    │ //suspicion               - 현재 의심도 확인   │
+    │ //score                   - 현재 점수 확인     │
+    │ //quit                    - 게임 종료          │
     ├──────────────────────────────────────────────┤
     │ 🎯 Quick-Reference                            │
     │ [진품] Co 7 keV, Fe 6 keV                     │
@@ -53,7 +53,7 @@ prologue:
       의뢰인 코드에 맞는 작품만 집어. 분석 결과 하나로는 판단 못 해. 조합해서 추려.
       성공하면 통로 E 열리고, 보상은 송금된다. 실패하면? 끝장이지.
 
-  notice: "📢 작전을 시작하려면 `/draw 3` 명령으로 작품 카드를 뽑으세요."
+  notice: "📢 작전을 시작하려면 `//draw 3` 명령으로 작품 카드를 뽑으세요."
 
   footer_hint: "📎 명령어 목록을 보려면 언제든지 //menu 를 입력하세요."
 
@@ -63,7 +63,7 @@ rules:
 
   scan:
     behavior: |
-      /scan <id> 명령은 단일 결과가 아닌 복합 힌트를 제공합니다.
+      //scan <id> 명령은 단일 결과가 아닌 복합 힌트를 제공합니다.
       사용자는 XRF, 붓 터치, 서명을 종합 분석해 진위를 추론해야 합니다.
     example: |
       [SCAN 결과: #C22 <춘상화>]
@@ -73,7 +73,7 @@ rules:
       → 총평: 위작 가능성 높음 (최종 판단은 플레이어에게 있음)
 
   stash:
-    input: "/stash <id> <선언숫자 (1~12)>"
+    input: "//stash <id> <선언숫자 (1~12)>"
     mechanic: |
       플레이어가 선택한 숫자와 시스템이 굴린 실제 d12 주사위 숫자의 차이에 따라
       회수 성공 여부와 의심도 변화가 결정됨.
@@ -85,7 +85,7 @@ rules:
 
   clients:
     description: |
-      /clients 명령은 암호화된 의뢰 카드 8매를 표시합니다.
+      //clients 명령은 암호화된 의뢰 카드 8매를 표시합니다.
       각 카드는 코드명과 힌트로만 제시되며, /manual cipher 명령으로 해석해야 합니다.
     example: |
       [Client LX-05]
@@ -93,7 +93,7 @@ rules:
       요구: 해당 조건을 만족하는 작품 2점 회수 시 30만 USDT 송금
 
   cipher_manual:
-    command: "/manual cipher"
+    command: "//manual cipher"
     contents: |
       📖 암호 해독 매뉴얼
       • 하늘   → Cd 23 keV 포함
@@ -103,7 +103,7 @@ rules:
       • 바다   → Pb 10 keV + 파랑 배경
 
   pigments_manual:
-    command: "/manual pigments"
+    command: "//manual pigments"
     contents: |
       🎨 안료 매뉴얼
       - 진품 안료: Co 7 keV, Fe 6 keV
@@ -118,31 +118,31 @@ rules:
       입력하면 통과 (의심도 −15), 실패 시 +20
 
   ending:
-    condition: "위작 ≥5 AND 의심도 <80 AND `/comm open_e` 성공 시"
-    result: "Clean Escape 엔딩 출력 및 /score JSON 생성"
+    condition: "위작 ≥5 AND 의심도 <80 AND `//comm open_e` 성공 시"
+    result: "Clean Escape 엔딩 출력 및 //score JSON 생성"
 
   termination:
-    condition: "/quit 또는 타이머 만료"
+    condition: "//quit 또는 타이머 만료"
     result: "세션 종료"
 
   cctv_event:
     trigger: "타이머 ≤15분 또는 위작 ≥3점 확보 시"
-    effect: "모든 /stash 기준값 +2 적용, 단 사용자 선언 숫자 방식은 유지"
+    effect: "모든 //stash 기준값 +2 적용, 단 사용자 선언 숫자 방식은 유지"
 
 menu:
   command: "//menu"
   description: "현재 사용 가능한 명령어를 출력합니다."
   output: |
     ┌─────────────── 명령어 메뉴 ───────────────┐
-    │ /draw 3                  - 작품 카드 3장 뽑기     │
-    │ /scan <id> (xrf|brush|sign) - 작품 분석          │
-    │ /stash <id> <숫자>        - 회수 시도 (1~12 선택) │
-    │ /clients                 - 의뢰 카드 목록         │
-    │ /manual pigments         - 안료 감별 가이드       │
-    │ /manual cipher           - 암호 해독표            │
-    │ /suspicion               - 현재 의심도 확인       │
-    │ /score                   - 현재 점수 확인         │
-    │ /quit                    - 세션 종료              │
+    │ //draw 3                  - 작품 카드 3장 뽑기     │
+    │ //scan <id> (xrf|brush|sign) - 작품 분석          │
+    │ //stash <id> <숫자>        - 회수 시도 (1~12 선택) │
+    │ //clients                 - 의뢰 카드 목록         │
+    │ //manual pigments         - 안료 감별 가이드       │
+    │ //manual cipher           - 암호 해독표            │
+    │ //suspicion               - 현재 의심도 확인       │
+    │ //score                   - 현재 점수 확인         │
+    │ //quit                    - 세션 종료              │
     └──────────────────────────────────────────┘
     📌 참고: 각 명령은 상황에 따라 조합해서 사용하세요.
 

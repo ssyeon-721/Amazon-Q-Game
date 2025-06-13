@@ -43,50 +43,80 @@ Can you finish the job, dodge suspicion, and escape within **30 minutes**?
 | Rounds 1-5 | **T-30 → 15 min** | Appraise 15 pieces; `/stash` freely | +1 Suspicion per command |
 | **Event A** | **Suspicion ≥ 40** | Yoon’s audit | `/audit` success −15 / fail +25 |
 | Rounds 6-8 | **T-15 → 06 min** | CCTV back online → `/stash` difficulty **+2** | Need d12 ≥ 7 |
-| **Event B** | **5 counterfeits** | `/comm` opens Escape Tunnel E | Stealth roll while moving |
+| **Event B** | **3 counterfeits** | `/comm` opens Escape Tunnel E | Stealth roll while moving |
 | Rounds 9-10 | **T-06 → 00 min** | Final appraisals + escape | 30 s blackout = stealth bonus |
 | Ending Check | **T-00 : 00** | Evaluate ending | Generate `result.json` |
 
 ---
 
+## 🧪 Recovery System Summary
+
+- **Recovery Tokens:** 3 total. Using a token guarantees **100 % success**  
+- **When no token is used:** 60 % success rate  
+  - On failure, Suspicion +4  
+- Usage: `//stash <id> yes|no`
+
+---
+
 ## 🎬 Ending Branches
 
-| Ending | Condition | Outcome |
-|--------|-----------|---------|
-| **Clean Escape** | ≥ 5 counterfeits & all client goals & `Suspicion < 80` | “ARGO vanishes; internal audit finds no errors.” |
-| **Double-Cross** | `Suspicion < 40` and you hide an **authentic** piece | Syndicate betrays you—explosion wipes evidence; ARGO is wanted. |
-| **Arrested** | `Suspicion ≥ 80` _or_ stash fail | Yoon slaps cuffs on you. |
-| **Auction Canceled** | **Time-up** | Syndicate threatens you for breach of contract. |
+| Ending Type      | Condition                                                                                 | Outcome |
+|------------------|-------------------------------------------------------------------------------------------|---------|
+| **Clean Escape** | Forgeries ≥ 3, client requirements met, `Suspicion < 15`, and `/comm open_e` succeeds      | You escape the syndicate; no audit record remains. |
+| **Double-Cross** | A genuine piece is recovered **and** Suspicion is low (`< 10`)                            | The syndicate suspects you are a double agent; you become wanted. |
+| **Arrest**       | Suspicion ≥ 20 **or** repeated recovery failures                                          | *Yoon Jae-hee Arrest* cut-scene. |
+| **Time Over**    | Time expires before appraisal/recovery goals are met                                      | Mission fails and you flee. |
 
 ---
 
-## 🔧 Core Commands
+## 📌 Command Summary
 
-| Command | Description |
-|---------|-------------|
-| `/draw 3` | Draw 3 artwork cards |
-| `/scan <id> xrf \| brush \| sign` | Show XRF / brush-stroke / signature data |
-| `/stash <id>` | Hide selected piece (d12 ≥ 5 succeeds) |
-| `/clients` | List client cards |
-| `/manual pigments` | 4-row pigment quick-ref + `/quick-analyze` tip |
-| `/suspicion` | Show current Suspicion |
-| `/comm <msg>` | Secret channel to “Critic” |
-| `/audit` | Respond to NPC audit |
-| `/score` | Produce final JSON result |
-| `/quit` | End session |
+| Command                               | Description |
+|---------------------------------------|-------------|
+| `//draw 3`                            | Draw 3 artwork cards |
+| `//scan <id> xrf \| sign`             | Analyze pigments or signature of a work |
+| `//stash <id> <use_token: yes\|no>`   | Attempt recovery (100 % if token used) |
+| `//clients`                           | Show encrypted client cards |
+| `//manual pigments`                   | Pigment classification manual |
+| `//manual cipher`                     | Cipher decoding table |
+| `//suspicion`                         | Check current Suspicion level |
+| `//score`                             | Output results in JSON |
+| `//quit`                              | Force-quit the game |
+| `//menu`                              | List all commands |
+
+---
+
+## 🚨 Audit Event Example
+
+Trigger: **Suspicion ≥ 5**  
+> Interpol examiner **“Julien”** is scrutinising your latest report.
+
+- 📋 **Item Checked:** 1 recent appraisal report  
+- ❗ **Risk:** If an error is found, Suspicion increases **significantly**.
+
+### 🎯 Within 30 seconds, enter **one sentence** containing any **3 of the 5 keywords** below:
+
+**Keyword pool**
+
+- `Pb 10 keV`
+- `Cd 23 keV`
+- `forgery`
+- `pigment error`
+- `brush-stroke mismatch`
+
+✍️ **Example input**  
+> `"Brush-stroke mismatch and Pb 10 keV detection indicate a forgery."`
 
 ---
 
-## 🔍 Pigment Quick-Ref (Easy)
+## 🎨 Pigment Quick-Reference
 
-| Category | Element / Peak | Hint |
-|----------|----------------|------|
-| **Authentic** | **Co 7 keV**, Fe 6 keV | 19 C natural cobalt / traditional pigments |
-| **Fake** | **Pb 10 keV**, Cd 23 keV | 20 C industrial pigments |
+| Category   | Element / Peak        | Notes |
+|------------|-----------------------|-------|
+| **Authentic** | Co 7 keV, Fe 6 keV  | Traditional natural pigments |
+| **Forgery**   | Pb 10 keV, Cd 23 keV | Modern industrial pigments |
 
-Use `/quick-analyze <id>` for auto-classification.
-
----
+> Use `//scan <id> xrf` to analyse pigment peaks.
 
 ## 🚀 How to Run
 
